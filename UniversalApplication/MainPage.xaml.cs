@@ -28,7 +28,7 @@ namespace UniversalApplication
             this.InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private  void Button_Click(object sender, RoutedEventArgs e)
         {
             //Calling our method
             ShowMessageDialog();
@@ -37,8 +37,21 @@ namespace UniversalApplication
         //Creating a custom method
         public async void ShowMessageDialog()
         {
+            await PlayClickSound();
             await new MessageDialog("This is our Message\t" +
                   "You've just cliked a button","Message Box").ShowAsync();
+        }
+
+        public async System.Threading.Tasks.Task<MediaElement> PlayClickSound()
+        {
+            var element = new MediaElement();
+            var folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Sound");
+            var file = await folder.GetFileAsync("ButtonClick.wav");
+            var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read);
+            element.SetSource(stream, "");
+            element.Play();
+            return element;
+            
         }
     }
 }
