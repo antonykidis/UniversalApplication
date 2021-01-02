@@ -8,8 +8,9 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <Button Content="Click Me" Margin="65,0,0,0" Height="164" Width="298" FontSize="45" Background="#FDF33838" Click="Button_Click"/>
+    <Grid Background="#FF9AADEE" RequestedTheme="Light">
+        <Button Content="Click Me" Margin="0,445,0,0" Height="114" Width="250" FontSize="45" Background="#FDF33838" Click="Button_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Image Source="Images/image1.png" HorizontalAlignment="Center" Height="307" Margin="0,101,0,0" VerticalAlignment="Top" Width="364" FocusVisualPrimaryBrush="#FF151111"/>
 
     </Grid>
 </Page>
