@@ -6,11 +6,40 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Background="#FF9AADEE" RequestedTheme="Light">
-        <Button Content="Click Me" Margin="0,445,0,0" Height="114" Width="250" FontSize="45" Background="#FDF33838" Click="Button_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <Image Source="Images/image1.png" HorizontalAlignment="Center" Height="307" Margin="0,101,0,0" VerticalAlignment="Top" Width="364" FocusVisualPrimaryBrush="#FF151111"/>
+    MaxHeight="704" MinHeight="704" MaxWidth="436.8" MinWidth="436.8" Height="704" Width="436.8" 
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" d:DesignWidth="436.8" d:DesignHeight="704" BorderBrush="#FFEC1414" BorderThickness="2,2,2,2">
+    <Page.Resources>
+        <SolidColorBrush x:Key="BlueColor" Color="#FF30B3DD" />
+        <SolidColorBrush x:Key="YellowColor" Color="#f2e30c"/>
+        <SolidColorBrush x:Key="GreenColor" Color="#39ed51"/>
+        <SolidColorBrush x:Key="BlueColor-2" Color="#342ef0"/>
+        <SolidColorBrush x:Key="ButtonDefaultColor" Color="#aeb8b0"></SolidColorBrush>
 
+    </Page.Resources>
+
+    <Grid x:Name="GridMain" Background="#FF9AADEE" RequestedTheme="Light" BorderBrush="Black">
+        <Button Content="Click Me" Margin="0,368,0,0" Height="114" Width="250" FontSize="45" Background="#FDF33838" Click="Button_ShowDialog_Click" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="#FF111010" BorderThickness="4,4,4,4"/>
+        <Image Stretch="Uniform" x:Name="image1" Source="Images/image1.png" HorizontalAlignment="Center" Height="238" Margin="0,70,0,0" VerticalAlignment="Top" Width="254" FocusVisualPrimaryBrush="#FF151111">
+            <Image.Projection>
+                <PlaneProjection>
+                </PlaneProjection>
+            </Image.Projection>
+        </Image>
+
+        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Center" Height="173" Margin="0,500,0,0" VerticalAlignment="Top" Width="405"/>
+        <Button x:Name="btn1" Content="White" Margin="34,552,0,0" VerticalAlignment="Top" Click="btn1_Click" Width="73"/>
+        <Button x:Name="btn2" Content="Orange" Margin="137,552,0,0" VerticalAlignment="Top" Click="btn2_Click" Width="73"/>
+        <Button x:Name="btn3" Content="Blue" Margin="243,552,0,0" VerticalAlignment="Top" Click="btn3_Click" Width="73"/>
+        <Button x:Name="btn4" Content="Yellow" Margin="329,552,0,0" VerticalAlignment="Top" Click="btn4_Click" Width="73"/>
+        <Button x:Name="btn5" Content="Green" Margin="34,624,0,0" VerticalAlignment="Top" Click="btn5_Click" Width="73"/>
+        <Button x:Name="btn7" Content="Rotate Image" Margin="228,625,0,0" VerticalAlignment="Top" Click="btnRotateToggleOnOff_Click"/>
+        <Button x:Name="btnExit" Content="EXIT" Margin="355,624,0,0" VerticalAlignment="Top" Click="btnExit_Click" BorderBrush="#FF0A0909"/>
+        <ContentControl Content="Choose a theme color" HorizontalAlignment="Left" Height="34" Margin="109,513,0,0" VerticalAlignment="Top" Width="222" FontSize="20" FontWeight="Bold"/>
+        <Button x:Name="btnSongPlay" Content="Play Music" Margin="124,624,0,0" VerticalAlignment="Top" Width="86" Click="PlayMusic_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="700" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
     </Grid>
 </Page>
