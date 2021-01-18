@@ -20,6 +20,7 @@ using Windows.UI.Popups;
 using Windows.UI.Xaml.Media.Imaging;//bitmap
 using Windows.UI.Xaml.Media.Animation;
 using System.Threading.Tasks;
+using Windows.UI.ViewManagement;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -30,7 +31,12 @@ namespace UniversalApplication
     {
         public MainPage()
         {
-            this.InitializeComponent(); 
+            //Set the default window size. 800x600
+            ApplicationView.PreferredLaunchViewSize = new Size(800, 600);
+            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
+            InitializeComponent();
+
+          
         }
 
         //Show  the actual Message
@@ -274,7 +280,16 @@ namespace UniversalApplication
             ResetButtonsColor(sender, e);
         }
 
-       
-    
+        private void btnNextPage_Click(object sender, RoutedEventArgs e)
+        {
+
+            //go to the next page
+            this.Frame.Navigate(typeof(NewPage), null);
+            //set the ismusic playing to false
+            //otherwise you want be able to stop the music
+            //when you come back from previous page.
+            IsSongPlaying = false;
+            btnSongPlay.Content = "stop"; 
+        }
     }
 }
